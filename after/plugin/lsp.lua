@@ -14,7 +14,7 @@ require('mason-lspconfig').setup({
 })
 
 lsp_zero.omnifunc.setup({
-    tabcomlete = false
+    tabcomplete = false
 })
 
 lsp_zero.on_attach(function(client, bufnr)
