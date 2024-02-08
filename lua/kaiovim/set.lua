@@ -1,3 +1,4 @@
+vim.opt.shortmess:append{ I = true }
 vim.opt.mouse = "" -- No mouse
 vim.opt.guicursor = "" -- Fat cursor always
 vim.opt.nu = true -- Shows line numbers
