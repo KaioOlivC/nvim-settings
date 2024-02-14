@@ -18,9 +18,7 @@ lsp_zero.omnifunc.setup({
 })
 
 lsp_zero.on_attach(function(client, bufnr)
-	local opts = {buffer = bufnr}
-
-	lsp_zero.default_keymaps(opts)
+	local opts = {buffer = bufnr, remap = false}
 
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
@@ -48,14 +46,14 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.abort(),
     ['<C-i>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
     ['<C-e>'] = cmp.mapping.select_next_item({behavior = 'select'}),
-    ['<C-S-i>'] = cmp.mapping(function()
+    ['<C-i>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item({behavior = 'insert'})
       else
         cmp.complete()
       end
     end),
-    ['<C-S-e>'] = cmp.mapping(function()
+    ['<C-e>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_next_item({behavior = 'insert'})
       else

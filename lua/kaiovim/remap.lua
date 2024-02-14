@@ -17,14 +17,13 @@ vim.keymap.set("n", "<C-n>", ":vertical resize -5<CR>") -- Make it narrower
 vim.keymap.set("n", "<C-e>", ":resize +5<CR>") -- Make it taller
 vim.keymap.set("n", "<C-i>", ":resize -5<CR>") -- Make it shorter
 vim.keymap.set("n", "<C-o>", ":vertical resize +5<CR>") -- Make it wider
-vim.keymap.set("n", "<leader>se", "<C-w>=")
+vim.keymap.set("n", "<C-s>e", "<C-w>=", {remap= true})
 
     -- Create splits
-vim.keymap.set("n", "<leader>sv", ":vsplit<CR>")
-vim.keymap.set("n", "<leader>sh", ":split<CR>")
+vim.keymap.set("n", "<C-s>v", ":vsplit<CR>", {remap= true})
+vim.keymap.set("n", "<C-s>h", ":split<CR>", {remap= true})
 
 -- Commands
-vim.keymap.set("", "<S-Space>", ":")
 
 -- Text search
     -- Search finds stay in the vertical middle
@@ -52,7 +51,7 @@ vim.keymap.set("n", "<C-S-e>", "mzJ`z") -- Line merger that does not move the cu
 vim.keymap.set("x", "p", "\"_dp") -- Paste after does not overwrite clipboard
 vim.keymap.set("x", "P", "\"_dP") -- Paste here does not overwrite clipboard
     -- Replace all instances of the current word under the cursor
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Linux scripts
     -- Makes current bash script in buffer executable
