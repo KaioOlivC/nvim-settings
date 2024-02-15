@@ -42,7 +42,7 @@ cmp.setup({
     {name = 'buffer'},
   },
   mapping = {
-    ['<Space>'] = cmp.mapping.confirm({select = true}),
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
     ['<Tab>'] = cmp_action.luasnip_supertab(),
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
     ['<C-n>'] = cmp.mapping.abort(),
