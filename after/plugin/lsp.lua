@@ -14,7 +14,6 @@ require('mason-lspconfig').setup({
 })
 
 lsp_zero.omnifunc.setup({
-    tabcomplete = false
 })
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -35,6 +34,7 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
   sources = {
@@ -42,18 +42,20 @@ cmp.setup({
     {name = 'buffer'},
   },
   mapping = {
-    ['<C-o>'] = cmp.mapping.confirm({select = false}),
+    ['<Space>'] = cmp.mapping.confirm({select = true}),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
     ['<C-n>'] = cmp.mapping.abort(),
     ['<C-i>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
     ['<C-e>'] = cmp.mapping.select_next_item({behavior = 'select'}),
-    ['<C-i>'] = cmp.mapping(function()
+    ['<C-I>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item({behavior = 'insert'})
       else
         cmp.complete()
       end
     end),
-    ['<C-e>'] = cmp.mapping(function()
+    ['<C-E>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_next_item({behavior = 'insert'})
       else
