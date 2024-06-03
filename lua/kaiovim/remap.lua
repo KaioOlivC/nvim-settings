@@ -31,17 +31,21 @@ vim.keymap.set("n", "k", "nzzzv")
 vim.keymap.set("n", "K", "Kzzzv")
 
 -- Text insertion
-vim.keymap.set({"n", "v"}, "t", "i") --At the cursor
-vim.keymap.set({"n", "v"}, "T", "I") --At the start of the line
-vim.keymap.set({"n", "v"}, "h", "o") --Add a line below
-vim.keymap.set({"n", "v"}, "H", "O") --Add a line at the current position
+vim.keymap.set("n", "t", "i") --At the cursor
+vim.keymap.set("n", "T", "I") --At the start of the line
+vim.keymap.set("n", "h", "o") --Add a line below
+vim.keymap.set("n", "H", "O") --Add a line at the current position
 vim.keymap.set("i", "<C-t>", "<C-d>") --Indent current line forward
 vim.keymap.set("i", "<C-d>", "<C-t>") --Indent current line backward
 
 -- Text selection
 vim.keymap.set({"n", "v"}, "f", "e") --Select a word till the end
-vim.keymap.set({"n", "v"}, "<leader>y", "\"+y") -- Copies into the system clipboard
-vim.keymap.set({"n", "v"}, "<leader>Y", "\"+Y") -- Copies into the system clipboard
+vim.keymap.set({"n", "v"}, "l", "f") --Select a word till the end
+vim.keymap.set({"n", "v"}, "j", "F") --Select a word till the end
+vim.keymap.set("n", "<C-y>", "\"+y") -- Copies into the system clipboard
+vim.keymap.set("n", "<C-Y>", "\"+Y") -- Copies into the system clipboard
+vim.keymap.set("v", "<C-y>", "\"+y") -- Copies into the system clipboard
+vim.keymap.set("v", "<C-Y>", "\"+Y") -- Copies into the system clipboard
 
 -- Text manipulation
     -- Move highlighted lines around
